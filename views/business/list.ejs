@@ -1,0 +1,60 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <h1><%= title %></h1>
+        <br>
+        <div>
+            <!-- ------------------------ -->
+            <!-- ADD button below -->
+            <!-- ------------------------ -->
+            <a href="/business/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-plus-circle"></i> 
+                Add a new Business Contact
+            </a>                
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email</th>                  
+                    <th class="text-center" colspan="3">Actions</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let i = 0; i < ContactList.length; i++) { %>
+                    <tr>
+                        <td class="text-center"><%= ContactList[i].name %></td>
+                        <td class="text-center"><%= ContactList[i].number %></td>
+                        <td class="text-center"><%= ContactList[i].email %></td>
+                                                
+                        
+                        <td class="text-center">
+                            <!-- ------------------------- -->
+                            <!-- EDIT button below -->
+                            <!-- ------------------------- -->
+                            <a href="/business/edit/<%= ContactList[i]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <!-- --------------------------- -->
+                            <!-- DELETE button below -->
+                            <!-- --------------------------- -->
+                            <a href="/business/delete/<%= ContactList[i]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+<%- include('../partials/bottom_nav.ejs') %>
+<%- include('../partials/footer.ejs') %>
