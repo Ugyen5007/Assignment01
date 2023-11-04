@@ -1,7 +1,7 @@
 
 // MongoDB compass 
 
-let atlasDB = "mongodb+srv://dbadmin:lSNmLzUCtumF4K9g@cluster0.vm2gmkd.mongodb.net/products"
+let atlasDB = "mongodb+srv://dbadmin:rCP4pMhkVXMEGD2Q@cluster0.vm2gmkd.mongodb.net/products"
 
 
 
